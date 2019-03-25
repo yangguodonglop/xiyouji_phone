@@ -35,23 +35,23 @@ export default {
     goLink() {},
 
     getCode() {
-      let param = new Object();
-      param.phoneNum = 13912345678;
-      login(param)
-        .then(response => {
-          console.log(response);
-          let { data } = response.data;
-          //根据store中set_token方法将token保存至localStorage/sessionStorage中，data["Authentication-Token"]，获取token的value值\
-          let userToken = 'Bearer ' + response.data.token;
-          // 将用户token保存到vuex中
-          this.changeLogin({ Authorization: userToken });
+      // let param = new Object();
+      // param.phoneNum = 13912345678;
+      // login(param)
+      //   .then(response => {
+          // console.log(response);
+          // let { data } = response.data;
+          // //根据store中set_token方法将token保存至localStorage/sessionStorage中，data["Authentication-Token"]，获取token的value值\
+          // let userToken = 'Bearer ' + response.data.token;
+          // // 将用户token保存到vuex中
+          // this.changeLogin({ Authorization: userToken });
  
           // this.$store.commit("set_token", response.data.token);
           this.$router.push({ path: "/description" });
-        })
-        .catch(error => {
-          console.log(error);
-        });
+        // })
+        // .catch(error => {
+        //   console.log(error);
+        // });
     }
     // getCode: function() {
     //   this.cmdType = "cache";

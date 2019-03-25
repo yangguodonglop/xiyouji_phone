@@ -52,7 +52,7 @@
     </div> -->
     <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable mui-slide-in">
 			<!--菜单部分-->
-			<aside id="offCanvasSide" class="mui-off-canvas-right">
+			<!-- <aside id="offCanvasSide" class="mui-off-canvas-right">
 				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
 					<div class="mui-scroll">
                         <div class="setting">
@@ -82,7 +82,7 @@
                         </div>
 					</div>
 				</div>
-			</aside>
+			</aside> -->
 			<div class="mui-inner-wrap">
 				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
                             <div class="details">

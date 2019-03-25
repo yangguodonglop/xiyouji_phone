@@ -7,20 +7,7 @@
 <script>
 export default {
   name: 'App',
-   watch:{
-            '$route':function(to,from){
-                let token = window.localStorage.getItem('token');
-　　　　　　　　   if (to.matched.some(record => record.meta.requiresAuth) && (!token || token === null)) {
-　　　　　　　　　　   next({
-                        
-  　　　　　　　　　　   path: '/saomiao',
-  　　　　　　　　　　   query: { redirect: to.fullPath }
-　　　　　　　　　　   })
-　　　　　　　　   } else {
-　　　　　　          next()
-　　　　　　　　   }
-      　　　}
-    　　}
+
 }
 </script>
 

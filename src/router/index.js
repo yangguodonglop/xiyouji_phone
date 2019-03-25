@@ -1,16 +1,45 @@
 import Vue from 'vue'
-//import Router from 'vue-router'
-import index from '@/pages/index'
-import description from '@/pages/description'
-import device from '@/pages/device'
-import devicedetails from '@/pages/devicedetails'
-import mining from '@/pages/mining'
-import management from '@/pages/management'
-import user from '@/pages/user'
-import ceshi from '@/pages/ceshi'
-import ceshinext from '@/pages/ceshinext'
-import saomiao from '@/pages/saomiao'
 import VueRouter from 'vue-router'
+import index from '@/pages/login/index'
+import login from '@/pages/login/login'
+import loginCode from '@/pages/login/loginCode'
+import protocol from '@/pages/login/protocol'
+import find from '@/pages/login/find'
+import binding from '@/pages/login/binding'
+import username from '@/pages/login/username'
+
+import minemachine from '@/pages/income/minemachine'
+import ranking from '@/pages/income/ranking'
+import allranking from '@/pages/income/allranking'
+import bill from '@/pages/income/bill'
+import recording from '@/pages/income/recording'
+import tomoney from '@/pages/income/tomoney'
+
+
+import management from '@/pages/management/management'
+import managementinfo from '@/pages/management/managementinfo'
+import mining from '@/pages/management/mining'
+
+
+import usercenter from '@/pages/userinfo/usercenter'
+import user from '@/pages/userinfo/user'
+import changephone from '@/pages/userinfo/changephone'
+import password from '@/pages/userinfo/password'
+import transactionword from '@/pages/userinfo/transactionword'
+import about from '@/pages/userinfo/about'
+import privacy from '@/pages/userinfo/privacy'
+import message from '@/pages/userinfo/message'
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,94 +51,131 @@ Vue.use(VueRouter)
       component: index
     },
     {
-      path:'/description',
-      name:'description',
-      component:description,
-      meta: {
-        requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
-    },
+        path:'/login',
+        name:'login',
+        component:login
     },
     {
-      path:'/device',
-      name:'device',
-      component:device,
-      meta: {
-        requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
-    },
+        path:'/loginCode',
+        name:'loginCode',
+        component:loginCode 
     },
     {
-      path:'/devicedetails',
-      name:'devicedetails',
-      component:devicedetails,
-      meta: {
-        requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+        path:'/protocol',
+        name:'protocol',
+        component:protocol 
     },
+    {
+        path:'/find',
+        name:'find',
+        component:find 
+    },
+    {
+        path:'/binding',
+        name:'binding',
+        component:binding 
+    },
+    {
+        path:'/username',
+        name:'username',
+        component:username
+    },
+    {
+        path:'/minemachine',
+        name:'minemachine',
+        component:minemachine
+    },
+    {
+        path:'/management',
+        name:'management',
+        component:management
+    },
+    {
+      path:'/usercenter',
+      name:'usercenter',
+      component:usercenter
+    },
+    {
+      path:'/managementinfo',
+      name:'managementinfo',
+      component:managementinfo
+    },
+    {
+      path:'/ranking',
+      name:'ranking',
+      component:ranking
+    },
+    {
+      path:'/bill',
+      name:'bill',
+      component:bill
+    },
+    {
+      path:'/recording',
+      name:'recording',
+      component:recording
+    },
+    {
+      path:"/allranking",
+      name:'allranking',
+      component:allranking
+    },
+    {
+      path:"/tomoney",
+      name:"tomoney",
+      component:tomoney
     },
     {
       path:'/mining',
-      name:'mining',
+      name:"mining",
       component:mining
     },
     {
-      path:'/management',
-      name:'management',
-      component:management
-    },
-    {
-      path:"/user",
-      name:'user',
+      path:'/user',
+      name:"user",
       component:user
     },
     {
-      path:"/ceshi",
-      name:'ceshi',
-      component:ceshi
+      path:"/changephone",
+      name:"changephone",
+      component:changephone
     },
     {
-      path:"/ceshinext",
-      name:'ceshinext',
-      component:ceshinext
+      path:'/password',
+      name:'password',
+      component:password
     },
     {
-      path:"/saomiao",
-      name:'saomiao',
-      component:saomiao
+      path:'/transactionword',
+      name:'transactionword',
+      component:transactionword
+    },
+    {
+      path:"/about",
+      name:'about',
+      component:about
+    },
+    {
+      path:"/privacy",
+      name:'privacy',
+      component:privacy
+    },
+    {
+      path:'/message',
+      name:"message",
+      component:message
     }
+  
+
+    
   ]
   
 const router = new VueRouter({
   routes: routes
 })
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {     // 哪些需要验证
-//     if (!sessionStorage.getItem("token")) {                      // token存在条件   
-//       next({
-//         path: '/saomiao',                                               // 验证失败要跳转的页面
-//         query: {
-//            redirect: to.fullPath                                 // 要传的参数
-//          }
-//       })
-//     } else {
-//       next()
-//     }
-//   } else {
-//     next()                                                       // 确保一定要调用 next()
-//   }
-// })
 
-// export default router
-router.beforeEach((to, from, next) => {
-  if (to.path === '/login') {
-    next();
-  } else {
-    let token = sessionStorage.getItem('Authorization');
- 
-    if (token === 'null' || token === '') {
-      next('/saomiao');
-    } else {
-      next();
-    }
-  }
-});
+
+
+
  
 export default router;

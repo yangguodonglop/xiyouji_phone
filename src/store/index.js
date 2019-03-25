@@ -5,7 +5,8 @@ const state={
     showFooter: true,
     changableNum:0,
     token:'',
-    Authorization: sessionStorage.getItem('Authorization') ? sessionStorage.getItem('Authorization') : ''
+    userPhonenum:''
+    //Authorization: sessionStorage.getItem('Authorization') ? sessionStorage.getItem('Authorization') : ''
 }
 const getters={
     isshow(state){
@@ -13,7 +14,8 @@ const getters={
     },
     ischange(state){
         return state.changableNum
-    }
+    },
+   
 }
 const mutations={
     show(state){
@@ -35,8 +37,8 @@ const mutations={
     sessionStorage.removeItem('token') 
     },
     changeLogin (state, user) {
-        state.Authorization = user.Authorization;
-        sessionStorage.setItem('Authorization', user.Authorization);
+        state.token = user.Authorization;
+        //sessionStorage.setItem('Authorization', user.Authorization);
       }
 }
 const actions={
