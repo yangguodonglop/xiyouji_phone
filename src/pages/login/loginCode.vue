@@ -33,7 +33,6 @@ export default {
     param.phoneNum = this.$route.query.phoneNum;
     login(param)
       .then(response => {
-        console.log(response);
         let { data } = response;
         this.getCode = data.code;
       })

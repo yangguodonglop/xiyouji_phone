@@ -4,6 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -23,6 +24,23 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
+  },
+  externals:{
+    'vue': 'Vue',
+   // 'vue-router': 'VueRouter',
+   // 'vuex': 'Vuex',
+    'element-ui': 'ELEMENT',
+    'vue-router': 'VueRouter',
+    'axios':'axios',
+    
+     //'element-ui': 'ElementUI',
+    // 'element-ui': 'ELEMENT',
+     //'echarts': 'echarts',
+    //  'vue-router': 'VueRouter',
+    //  'axios':'axios',
+    //  'jquery': '$',
+      //  'v-charts':'VCharts',
+    //  'VCharts':'v-charts',
   },
   output: {
     path: config.build.assetsRoot,
